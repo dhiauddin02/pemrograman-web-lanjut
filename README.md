@@ -1,2 +1,3 @@
 # pemrograman-web-lanjut
-nama: muhammad dhiauddin, nim: 2021573010040
+Nama    : muhammad dhiauddin
+Nim     : 2021573010040
