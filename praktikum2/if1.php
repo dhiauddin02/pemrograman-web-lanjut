@@ -12,10 +12,10 @@
         $d = "senin";
         echo "Selamat belajar <br>";
     }
-    else {
+    else 
         echo "Ini hari $d<br>";
         echo $d . " " . $date;
-    }
+    
     ?>
 
 </body>
