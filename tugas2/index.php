@@ -18,31 +18,31 @@
         <!-- justify-content-center untuk mengatur posisi form agar berada di tengah-tengah -->
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-4">
-                <form class="form-container">
+                <form class="form-container" action="get.php"method="request">
                     <h4 class="text-center font-weight-bold"> FORM PENDAFTARAN </h4>
                     <div class="form-group">
-                        <label for="name">Nama</label>
-                        <input type="text" class="form-control" id="name" placeholder="Masukkan Nama">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Nama">
                     </div>
                     <div class="form-group">
                         <label for="InputEmail">Alamat Email</label>
-                        <input type="email" class="form-control" id="InputEmail" aria-describeby="emailHelp" placeholder="Masukkan email">
+                        <input type="email" class="form-control"name="email" id="InputEmail" aria-describeby="emailHelp" placeholder="Masukkan email">
                     </div>
                     <div class="form-group">
                         <label for="name">Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Masukkan username">
+                        <input type="text" class="form-control"name="username" id="username" placeholder="Masukkan username">
                     </div>
                     <div class="form-group">
                         <label for="InputPassword">Password</label>
-                        <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+                        <input type="password" class="form-control"name="password" id="InputPassword" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <label for="tgllahir">Tanggal Lahir</label>
-                        <input type="date" class="form-control" id="tgllahir" placeholder="Masukan tanggal lahir">
+                        <input type="date" class="form-control"name="tgllahir" id="tgllahir" placeholder="Masukan tanggal lahir">
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <input type="text" class="form-control" id="alamat" placeholder="Masukkan alamat">
+                        <input type="text" class="form-control"name="alamat" id="alamat" placeholder="Masukkan alamat">
                     </div>
                     <div class="form-group">
                         <label for="Agama">Agama</label>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nohp">No.HP</label>
-                        <input type="number" class="form-control" id="nohp" placeholder="Masukan nomor hp">
+                        <input type="number" class="form-control"name="nohp" id="nohp" placeholder="Masukan nomor hp">
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="rememberme" id="rememberme">
