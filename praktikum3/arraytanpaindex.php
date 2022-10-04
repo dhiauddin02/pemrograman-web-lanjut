@@ -4,7 +4,6 @@
 <head>
     <title>Document</title>
 </head>
-
 <body>
     <?php
     $nama[] = "Muhammad";
@@ -18,5 +17,4 @@
     echo "<br>";
     ?>
 </body>
-
 </html>

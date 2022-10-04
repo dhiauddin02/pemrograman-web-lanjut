@@ -10,8 +10,6 @@
     }
     echo "ini contoh fungsi yang tanpa parameter <br>";
     garis();
-    echo "Lihat perbedaan dengan fungsi yang dengan parameter <br>";
-    garis();
     ?>
 </body>
 </html>

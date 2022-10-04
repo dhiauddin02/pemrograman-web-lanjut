@@ -14,7 +14,6 @@
     echo "<br>";
     echo "Telepon nida : ".$telepon['nida'];
     echo "<br>";
-
     ?>
 </body>
 </html>

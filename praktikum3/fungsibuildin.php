@@ -13,7 +13,6 @@
     echo "akar 100 = $b <br>";
     echo "ceil(4.25) = $c <br>";
     echo "floor(4.25) = $d <br>";
-
     ?>
 </body>
 </html>

@@ -4,7 +4,6 @@
 <head>
     <title>Document</title>
 </head>
-
 <body>
     <?php
     $anak[0] = "Faruq";
@@ -16,5 +15,4 @@
    }
     ?>
 </body>
-
 </html>
