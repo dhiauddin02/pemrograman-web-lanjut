@@ -20,7 +20,7 @@ if (empty($_SESSION['username2b'])) {
     <?php
     echo "<h1>selamat datang</h1>";
     ?>
-    <a href="logout.php"><input type="button"></a>
+    <a href="logout.php"><input type="button" value="logout"></a>
 </body>
 
 </html>
