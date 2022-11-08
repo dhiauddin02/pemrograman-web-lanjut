@@ -44,14 +44,12 @@
 
 
     <div class="sticky-top">
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-            <div class="container">
+        <nav class="navbar navbar-expand navbar-dark bg-primary">
+            <div class="container-lg">
                 <a class="navbar-brand" href="#"> <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
                         <i class="bi bi-cup-hot me-2"></i>DeCafe
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -62,20 +60,19 @@
                                 <strong>Iman Kece</strong>
                             </a>
                             <ul class="dropdown-menu text-small shadow mt-3">
-                                <li><a class="dropdown-item" href="#">New project...</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-person me-2"></i>Settings</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Profile</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-in-left me-2"></i>Sign out</a></li>
                             </ul>
                         </div>
                     </div>
             </div>
         </nav>
     </div>
-    <div>
+    <div class="container-lg">
         <div class="row">
             <!-- sidebar -->
             <?php
@@ -84,32 +81,15 @@
 
             <!-- content -->
             <?php
-            if (isset($_GET['x']) && $_GET['x'] == "dashboard") {
-                include("dashboard.php");
-            } elseif (isset($_GET['x']) && $_GET['x'] == "orders") {
-                include("orders.php");
-            } elseif (isset($_GET['x']) && $_GET['x'] == "products") {
-                include("products.php");
-            } elseif (isset($_GET['x']) && $_GET['x'] == "customers") {
-                include("customers.php");
-            } elseif (isset($_GET['x']) && $_GET['x'] == "reports") {
-                include("reports.php");
-            }
+            include "content.php";
             ?>
+
         </div>
     </div>
 
-    <!-- <div class="container py-2">
-        <div class="row">
-            <div class="col-6">
-                testt
-            </div>
-            <div class="col-6">
-            </div>
-        </div>
-    </div> -->
 
-    <div class="container">
+
+    <div class="container fixed-bottom">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">

@@ -1,4 +1,3 @@
- <div class="col col-md-9">
      <div class="card">
          <div class="card-header">
              Products
@@ -12,4 +11,3 @@
 
          </div>
      </div>
- </div>
