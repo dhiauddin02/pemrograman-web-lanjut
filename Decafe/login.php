@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!empty($_SESSION['username_decafe'])) {
+    header('location:dashboard');
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -7,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Signin Template · Bootstrap v5.2</title>
+    <title>Decafe- Aplikasi pemesanan makanan dan minuman cafe</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 
@@ -78,19 +84,19 @@
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate action="proses/proses_login.php" method="POST">
             <i class="bi bi-cup-hot fs-1 me-2"></i>
             <h1 class="h3 mb-3 fw-normal">Please Login</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" require>
+                <input name="username" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" require>
                 <label for="floatingInput">Email address</label>
                 <div class="invalid-feedback">
                     Masukan email yang valid
                 </div>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" require>
+                <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" require>
                 <label for="floatingPassword">Password</label>
                 <div class="invalid-feedback">
                     Masukan password
@@ -102,7 +108,7 @@
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit_validate" value="abc">Login</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
         </form>
     </main>

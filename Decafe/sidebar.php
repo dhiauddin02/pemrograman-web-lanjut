@@ -15,7 +15,7 @@
 
                          <li>
 
-                             <a href="dashboard" class="nav-link <?php echo (isset($_GET['x']) && $_GET['x'] == "dashboard") ? "active link-light" : "link-dark" ?>">
+                             <a href="dashboard" class="nav-link <?php echo ((isset($_GET['x']) && $_GET['x'] == "dashboard") || !isset($_GET['x'])) ? "active link-light" : "link-dark" ?>">
                                  <i class="bi bi-speedometer2 me-2"></i>
                                  Dashboard
                              </a>
