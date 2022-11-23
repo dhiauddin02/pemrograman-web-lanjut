@@ -23,15 +23,15 @@
 
                          </li>
                          <li>
-                             <a href="orders" class="nav-link <?php echo (isset($_GET['x']) && $_GET['x'] == "orders") ? "active link-light" : "link-dark" ?>">
+                             <a href="menu" class="nav-link <?php echo (isset($_GET['x']) && $_GET['x'] == "menu") ? "active link-light" : "link-dark" ?>">
                                  <i class="bi bi-cart4 me-2"></i>
-                                 Orders
+                                 Daftar Menu
                              </a>
                          </li>
                          <li>
-                             <a href="products" class="nav-link <?php echo (isset($_GET['x']) && $_GET['x'] == "products") ? "active link-light" : "link-dark" ?>">
-                                 <i class="bi bi-table me-2"></i>
-                                 Products
+                             <a href="orders" class="nav-link <?php echo (isset($_GET['x']) && $_GET['x'] == "orders") ? "active link-light" : "link-dark" ?>">
+                                 <i class="bi bi-cart4 me-2"></i>
+                                 Orders
                              </a>
                          </li>
                          <li>
@@ -40,12 +40,23 @@
                                  Customers
                              </a>
                          </li>
+                         <?php if($hasil['level']==1){?>
+                         <li>
+                             <a href="users" class="nav-link <?php echo (isset($_GET['x']) && $_GET['x'] == "users") ? "active link-light" : "link-dark" ?>">
+                                 <i class="bi bi-table me-2"></i>
+                                 users
+                             </a>
+                         </li>
+
                          <li>
                              <a href="reports" class="nav-link <?php echo (isset($_GET['x']) && $_GET['x'] == "reports") ? "active link-light" : "link-dark" ?>">
                                  <i class="bi bi-envelope-paper me-2"></i>
                                  Reports
                              </a>
                          </li>
+                         <?php
+                         }
+                         ?>
                      </ul>
 
                  </div>

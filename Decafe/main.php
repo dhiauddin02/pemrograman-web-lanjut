@@ -1,8 +1,12 @@
 <?php
-session_start();
-if(empty($_SESSION['username_decafe'])){
+// session_start();
+if (empty($_SESSION['username_decafe'])) {
     header('location:login');
 }
+include "proses/connect.php";
+$query = mysqli_query($conn, "select * from tb_user where username = '$_SESSION[username_decafe]'");
+$hasil = mysqli_fetch_array($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,35 +53,101 @@ if(empty($_SESSION['username_decafe'])){
     </svg>
 
 
-    <div class="sticky-top">
-        <nav class="navbar navbar-expand navbar-dark bg-primary">
-            <div class="container-lg">
-                <a class="navbar-brand" href="."> <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
-                        <i class="bi bi-cup-hot me-2"></i>DeCafe
-                    </a>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <nav class="navbar navbar-expand navbar-dark bg-primary sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="."> <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
+                    <i class="bi bi-cup-hot me-2"></i>DeCafe
+                </a>
 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    </ul>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="gambar/imankeren.jpeg" alt="" width="32" height="32" class="rounded-circle me-2">
+                            <strong><?php
+                                    echo $hasil['username']
+                                    ?></strong>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow mt-3">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-file-person me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalUbahPassword"><i class="bi bi-key me-2"></i>Ubah Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="logout"><i class="bi bi-box-arrow-in-left me-2"></i>Sign out</a></li>
                         </ul>
-                        <div class="dropdown">
-                            <a href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="gambar/imankeren.jpeg" alt="" width="32" height="32" class="rounded-circle me-2">
-                                <strong>Iman Kece</strong>
-                            </a>
-                            <ul class="dropdown-menu text-small shadow mt-3">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-person me-2"></i>Settings</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Profile</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="logout"><i class="bi bi-box-arrow-in-left me-2"></i>Sign out</a></li>
-                            </ul>
+                    </div>
+                </div>
+        </div>
+    </nav>
+    <!-- ModalUbahPAssword -->
+    <div class=" modal fade" id="modalUbahPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ubah Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate action="proses/proses_ubah_password.php" method="post">
+                    
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-floating mb-3">
+                                    <input disabled type="email" name="username" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?php echo $_SESSION['username_decafe'] ?>">
+                                    <label for=" floatingInput">Username</label>
+                                    <div class="invalid-feedback">
+                                        Masukan Username
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-floating mb-3">
+                                    <input type="password" name="passwordlama" class="form-control" id="floatingPassword" required>
+                                    <label for=" floatingInput">Password Lama</label>
+                                    <div class="invalid-feedback">
+                                        Masukan Password Lama
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-floating mb-3">
+                            <input type="password" name="passwordbaru" class="form-control" id="floatingInput" required>
+                            <label for=" floatingInput">Password Baru</label>
+                            <div class="invalid-feedback">
+                                Masukan Password Baru
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-floating mb-3">
+                            <input type="password" name="repasswordbaru" class="form-control" id="floatingPassword" required>
+                            <label for=" floatingInput">Ulangi Password Baru</label>
+                            <div class="invalid-feedback">
+                                Masukan Ulangi Password Baru
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="ubah_password_validate" value="12345" class="btn btn-primary">Save changes</button>
+                </div>
+                </form>
             </div>
-        </nav>
+
+        </div>
     </div>
+    </div>
+    <!-- EndModalUbahPAssword -->
+
     <div class="container-lg">
         <div class="row">
             <!-- sidebar -->
@@ -122,8 +192,28 @@ if(empty($_SESSION['username_decafe'])){
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
     <script src="sidebars.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 
 </html>
